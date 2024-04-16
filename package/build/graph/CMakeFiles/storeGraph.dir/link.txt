@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/storeGraph.dir/graph.cpp.o CMakeFiles/storeGraph.dir/storeGraph.cpp.o  -o storeGraph  ../utils/libutils.a 

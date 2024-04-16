@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/junqiqiu/Triangle_Matching/package/utils/globals.cpp
+globals.h
+/home/junqiqiu/Triangle_Matching/package/utils/globals.h
+
+/home/junqiqiu/Triangle_Matching/package/utils/globals.h
+atomic
+-
+
