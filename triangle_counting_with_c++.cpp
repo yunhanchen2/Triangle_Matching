@@ -25,8 +25,6 @@ public:
     }
 };
 
-
-
 class MyQueue{
 private:
     ListNode *front;
@@ -126,8 +124,8 @@ int main(int argc,char* argv[]) {
 
         CSRGraph graph;
 
-        graph.col_indices = new int[n];
-        graph.row_offsets = new int[m + 1];
+        graph.col_indices = new int[n]();
+        graph.row_offsets = new int[m + 1]();
 
         int size = n;
 
@@ -136,9 +134,9 @@ int main(int argc,char* argv[]) {
             array[i] = new int[2];  // 动态分配二维数组的列
         }
 
-        int count_the_same = 0;
+        // int count_the_same = 0;
 
-        for (int i = 0; i < size; ++i) {
+        for (int i = 0; i < size; ++i) {// #ITR = N /2;
             int m1, n1;
             fin >> m1 >> n1;
 
@@ -152,8 +150,8 @@ int main(int argc,char* argv[]) {
 
         fin.close();
 
-        size = size - count_the_same;
-        n = n - count_the_same;
+        //size = size - count_the_same;
+        //n = n - count_the_same;
 
         // 按照要求对数组进行排序
         std::sort(array, array + size, compare);
@@ -161,7 +159,7 @@ int main(int argc,char* argv[]) {
         removeDuplicates(array, n);
 
         //find the true index
-        int *true_index = new int[m];
+        int *true_index = new int[n];
 
         for (int i = 0; i < n; i++) {
             true_index[i] = array[i][0];
@@ -194,6 +192,7 @@ int main(int argc,char* argv[]) {
             temp = graph.row_offsets[i];
             graph.row_offsets[i] = accumulate;
             accumulate += temp;
+            
         }
         graph.row_offsets[m] = accumulate;
 
@@ -207,7 +206,6 @@ int main(int argc,char* argv[]) {
         for (int i = 0; i < n; i++) {
             graph.col_indices[i] = array[i][1];
         }
-
 
         //create queue
         MyQueue M1;
@@ -264,7 +262,7 @@ int main(int argc,char* argv[]) {
         //cut duplicate:
 
         for (int i = 0; i < n3; i++) {
-            cout << M31.Dequeue() << " " << M32.Dequeue() << " " << M33.Dequeue() << endl;
+            ;//cout << M31.Dequeue() << " " << M32.Dequeue() << " " << M33.Dequeue() << endl;
         }
 
         cout << "the total number of triangles are: " << n3 << endl;
